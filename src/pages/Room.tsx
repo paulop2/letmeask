@@ -47,7 +47,7 @@ export function Room() {
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`)
 
-    roomRef.once('value', room => {
+    roomRef.on('value', room => { // verificar na aula 3 1:30:00 para performance
 
       const databaseRoom = room.val()
       const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
